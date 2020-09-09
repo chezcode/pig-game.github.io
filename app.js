@@ -16,56 +16,12 @@ GAME RULES:
 // generating fundamental game variables
 
 
-/* A more complex way of declaring variables in this situation
-var score1 = 0
-var score2 = 0
-var roundScore= 0*/
-
 var scores, roundScore, activePlayer, gamePlaying;
 init();
 var lastDice 
 // keeps track of player currently playing; 0 is 1 Player and 1 is 2 player; We will use this variable to read the //scores out of the scores array...activeplayer 0 will read or write element 0 in scores array and activeplayer 2 will do so for //element 1 of the array
 
 
-/*create the dice using Math.random method (produces a decimal number between 0-1). Multiply that time 6 to roll number 1-5 and use floor method to produce whole number ex. Math.floor(Math.random()*6)....then add 1 to produce random number 1-6...  */
-
-//dice = Math.floor(Math.random()*6) + 1;
-
-// for access to DOM use document.querySelector...you can change elements and values in Webpage...use # for selecting IDs
-// set current score equal to random dice number
-// ex...document.querySelector('#current-0').textContent = dice;
-/* JS will use type coersion to toggle dice between active players...when activePlayer reads 1, the dice random number will appear in 'current-1', vice versa for when activePlayer reads 0...*/
-// this ex of querySelector used as 'setter' of content to webpage
-//document.querySelector('#current-' + activePlayer).textContent = dice;
-
-// changing an element using innerhtml method... you must write using strings and not plain text... this ID change is italicized...
-//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
-
-
-// using querySelector as a 'getter' or read content from Webpage and store into x
-//var x = document.querySelector('#score-0').textContent;
-//console.log(x);
-
-
-
-
-//change CSS content using querySelector; 
-// make dice display invisible at start of game by setting CSS display property to 'none'
-/* the dice image is the class .dice in html file...style(method), display(CSSproperty, 'none'(CSS value))*/
-/*document.querySelector('.dice').style.display = 'none';
-
-//setting current and main score to 0
-document.getElementById('score-0').textContent = '0';
-document.getElementById('score-1').textContent = '0';
-document.getElementById('current-0').textContent = '0';
-document.getElementById('current-1').textContent = '0';*/
-
-// adding
-// callback funtion; using the eventlistener to call a function
-//function btn();
-//document.querySelector('.btn-roll').addEventListener('click', btn);
-
-/* anonymous functions dont have a name so they can't be reused outside its scope...ex. below*/
 
 document.querySelector('.btn-roll').addEventListener('click', function(){
     if(gamePlaying){
@@ -167,6 +123,10 @@ roundScore = 0;
 activePlayer = 0;
 gamePlaying = true;
 document.querySelector('.dice').style.display = 'none';
+
+
+
+
 //setting current and main score to 0
 document.getElementById('score-0').textContent = '0';
 document.getElementById('score-1').textContent = '0';
